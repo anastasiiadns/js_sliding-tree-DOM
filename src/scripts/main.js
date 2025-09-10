@@ -5,7 +5,6 @@ const collectionLi = document.querySelectorAll('li');
 for (const li of collectionLi) {
   const wrapper = document.createElement('span');
   const collectionUl = li.querySelector(':scope > ul');
-
   const arrNode = [];
 
   li.insertBefore(wrapper, li.firstChild);
