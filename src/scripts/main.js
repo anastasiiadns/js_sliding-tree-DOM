@@ -20,13 +20,15 @@ for (const li of collectionLi) {
   }
 
   wrapper.addEventListener('click', (e) => {
-    if (e.target !== wrapper) {
+    if (
+      e.target !== wrapper &&
+      !(e.target.nodeType === Node.TEXT_NODE && e.target.parentNode === wrapper)
+    ) {
       return;
     }
 
     if (collectionUl) {
-      collectionUl.style.display =
-        getComputedStyle(collectionUl).display === 'none' ? 'block' : 'none';
+      collectionUl.classList.toggle('hidden');
     }
   });
 }
